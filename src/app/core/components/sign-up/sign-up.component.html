@@ -1,0 +1,41 @@
+<div class="d-flex justify-content-center">
+    <div class="p-4 w-25 border shadow-sm rounded-3 position-absolute top-50 start-50 translate-middle">
+      <div class="alert alert-danger" role="alert" *ngIf="signUpForm.valid && !isOtpVerified">
+        OTP verification is manadatory
+      </div>
+    <div class="alert alert-danger" role="alert" *ngIf="isIncorrectOtp">
+       OTP Is Invalid
+    </div>
+       <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
+        <h3 class="text-center pb-4">Sign up</h3>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label fs-5">Username</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            formControlName="userName">
+        </div>
+        
+        <label for="mobileNumber" class="form-label">Mobile Number</label>
+        <div class="mb-3 input-group">
+            <input type="text" class="form-control" id="mobileNumber" formControlName="mobileNo">
+            <span *ngIf="!isOtpVerified" class="input-group-text" (click)="getOtp()"><a>Get Otp</a></span>
+            <span *ngIf="isOtpVerified" class="input-group-text"><i class="bi bi-check-circle text-success fs-5"></i></span>
+        </div>
+        <div *ngIf="isGetOtp">
+            <label for="mobileNumber" class="form-label">OTP</label>
+            <div class="mb-3 input-group" >
+                <input type="text" class="form-control" id="mobileNumber" #otp>
+                <span class="input-group-text" (click)="verifyOtp(otp.value)"><a>Verify Otp</a></span>
+            </div>
+            <div>Otp is Valid For {{otpCounter}}</div>
+        </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label fs-5">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password">
+          </div>
+        <div class="d-grid gap-2 m-4">
+          <button class="btn btn-primary" type="submit" [disabled]="signUpForm.invalid">Submit</button>
+          <button class="btn btn-primary" type="submit" routerLink="/signin">Login</button>
+        </div>
+      </form>
+    </div>
+  </div> 

@@ -8,13 +8,15 @@
           <h5 class="card-title">{{slide.type}}</h5>
           <p class="card-text">{{slide.description}}</p>
           <h6 class="card-text">MRP ₹ {{slide.actualPrice}}</h6>
-          <a href="#" class="btn btn-primary">ADD</a>
+          <p class="card-text">MRP ₹&nbsp; <span class="me-2 text-decoration-line-through" *ngIf="slide.actualPrice != slide.discountPrice">{{slide.actualPrice}}</span> {{slide.discountPrice}}<button type="button" class="btn btn-outline-primary ms-4 btn-sm" (click)="addToCart(slide)">ADD</button></p>
         </div>
       </div>
-      </ng-template>
-    </ng-container>
-  
-  </owl-carousel-o>
+    </ng-template>
+  </ng-container>
+
+</owl-carousel-o>
 </div>
+
+
 
 

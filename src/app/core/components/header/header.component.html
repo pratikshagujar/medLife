@@ -1,20 +1,22 @@
-<nav class="navbar bg-body-tertiary">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-            <img src="https://www.medibuddy.in/assets/images/medibuddy-icon.png" alt="" width="30" height="24"
-             class="d-inline-block align-text-top">
-            <span style="color: blue;"> Health</span> <span style="color:Red;">Plus</span>
-         
-        </a>
-
-        <div class="text-end me-5">
-            <a class="text-decoration-none me-2">Contact Us</a>
-            <a class="text-decoration-none me-2">Login</a>
+<div class="container">
+      <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand ms-3" href="#">
+            <img src="https://www.medibuddy.in/assets/images/medibuddy-icon.png" alt="Logo" width="30" height="24"
+              class="d-inline-block align-text-top">
+            <span class="text-primary fw-semibold"> Medlife </span>
+          </a>
+          <div class="text-end">
+            <a class="text-decoration-none me-3">About Us</a>
+            <a class="text-decoration-none ms-2 cursor" routerLink="/signin" 
+            #closeBtn *ngIf="!isUserLoggedIn">Login / Create Account </a>
+            <span class="ms-2 cursor" *ngIf="isUserLoggedIn">{{userDetails?.userName}}</span>
+            <i class="bi bi-cart ms-3 fs-5 cursor" routerLink="/cart"></i><span class="border rounded-circle px-1 bg-danger text-white cart">{{cartCounter}}</span>
+          </div>
         </div>
+      </nav>
     </div>
-</nav>
-
-
+    
+    
 
     
-     

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { CartComponent } from 'src/app/cart/cart.component';
+import { CartService } from 'src/app/cart/cart.service';
 import { HttpService } from 'src/app/core/services/http.service';
 
 @Component({
@@ -10,7 +12,7 @@ export class TopDealsByCategoryComponent {
 
   topDealsByCategoryData:any=[];
 
-constructor(private http:HttpService){
+constructor(private http:HttpService,private cart:CartService){
 
 }
 ngOnInit(){
@@ -27,5 +29,8 @@ getTopDealsByCategory(){
     console.log(error);
   }
   )
+}
+addToCart(item:any){
+  this.cart.addItemToCart(item);
 }
 }

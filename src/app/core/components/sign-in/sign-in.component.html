@@ -1,0 +1,25 @@
+<div class="d-flex justify-content-center">
+  <div class="p-4 w-25 shadow-lg rounded-5 position-absolute top-50 start-50 translate-middle">
+    <div class="alert alert-danger" role="alert" *ngIf="isNewUser">
+      User does'nt exists,please register first!
+    </div>
+
+    <form [formGroup]="loginForm" (ngSubmit)="logIn()">
+      <h3 class="text-center pb-4">Log in</h3>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label fs-5">Username</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+          formControlName="userName">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label fs-5">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password">
+      </div>
+      <div class="d-grid gap-2 m-4">
+        <button class="btn btn-primary" type="submit">sign in</button>
+        <button class="btn btn-primary" type="button" routerLink="/signup">Create Account</button>
+      </div>
+
+    </form>
+  </div>
+</div> 

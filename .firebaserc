@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "medlife-aa05a": {
+      "hosting": {
+        "MedLife": [
+          "medlife-aa05a"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "medlife-aa05a"
+  }
+}

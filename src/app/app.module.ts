@@ -8,11 +8,12 @@ import { HomeComponent } from './components/home/home.component';
 import { RouterModule, Route } from '@angular/router';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { TopDealsComponent } from './components/top-deals/top-deals.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TopDealsByCategoryComponent } from './components/top-deals-by-category/top-deals-by-category.component';
 import { TopDealsHeaderComponent } from './components/top-deals-header/top-deals-header.component';
 import { MedicineComponent } from './components/medicine/medicine.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ViewProductDetailsComponent } from './components/view-product-details/view-product-details.component';
 
 @NgModule({
   declarations: [
@@ -23,18 +24,21 @@ import { HttpClientModule } from '@angular/common/http';
     TopDealsByCategoryComponent,
     TopDealsHeaderComponent,
     MedicineComponent,
+    ViewProductDetailsComponent,
   ],
-  providers: [],
-  bootstrap: [AppComponent],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CoreModule,
+  CoreModule,
     RouterModule,
     CarouselModule,
     BrowserAnimationsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
   ],
+  providers: [],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
